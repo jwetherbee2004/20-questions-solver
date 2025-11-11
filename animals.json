@@ -1,157 +1,33 @@
 {
-  "dog": {
-    "isMammal": true, "canFly": false, "isPet": true, "isDomestic": true,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isCarnivore": true,
-    "isHerbivore": false, "isLarge": false, "isPredator": true
-  },
-  "cat": {
-    "isMammal": true, "canFly": false, "isPet": true, "isDomestic": true,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isCarnivore": true,
-    "isHerbivore": false, "isLarge": false, "isPredator": true
-  },
-  "cow": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": true,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isCarnivore": false,
-    "isHerbivore": true, "isLarge": true, "isPredator": false
-  },
-  "horse": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": true,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isCarnivore": false,
-    "isHerbivore": true, "isLarge": true, "isPredator": false
-  },
-  "sheep": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": true,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isHerbivore": true,
-    "isCarnivore": false, "isLarge": false, "isPredator": false
-  },
-  "pig": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": true,
-    "livesInWater": false, "hasFur": false, "laysEggs": false, "isOmnivore": true,
-    "isHerbivore": false, "isLarge": false, "isPredator": false
-  },
-  "rabbit": {
-    "isMammal": true, "canFly": false, "isPet": true, "isDomestic": true,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isHerbivore": true,
-    "isLarge": false, "isPredator": false
-  },
-  "lion": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isCarnivore": true,
-    "isLarge": true, "isPredator": true
-  },
-  "tiger": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isCarnivore": true,
-    "isLarge": true, "isPredator": true
-  },
-  "elephant": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFur": false, "laysEggs": false, "isHerbivore": true,
-    "isLarge": true, "isPredator": false
-  },
-  "bear": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isOmnivore": true,
-    "isLarge": true, "isPredator": true
-  },
-  "wolf": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isCarnivore": true,
-    "isLarge": false, "isPredator": true
-  },
-  "fox": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isCarnivore": true,
-    "isLarge": false, "isPredator": true
-  },
-  "deer": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isHerbivore": true,
-    "isLarge": false, "isPredator": false
-  },
-  "monkey": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFur": true, "laysEggs": false, "isOmnivore": true,
-    "isLarge": false, "isPredator": false
-  },
-  "eagle": {
-    "isMammal": false, "canFly": true, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFeathers": true, "laysEggs": true, "isCarnivore": true,
-    "isLarge": false, "isPredator": true
-  },
-  "penguin": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": true, "hasFeathers": true, "laysEggs": true, "isCarnivore": true,
-    "isLarge": false, "isPredator": false
-  },
-  "duck": {
-    "isMammal": false, "canFly": true, "isPet": false, "isDomestic": true,
-    "livesInWater": true, "hasFeathers": true, "laysEggs": true, "isOmnivore": true,
-    "isLarge": false, "isPredator": false
-  },
-  "chicken": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": true,
-    "livesInWater": false, "hasFeathers": true, "laysEggs": true, "isOmnivore": true,
-    "isLarge": false, "isPredator": false
-  },
-  "ostrich": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasFeathers": true, "laysEggs": true, "isHerbivore": true,
-    "isLarge": true, "isPredator": false
-  },
-  "frog": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": true, "hasFur": false, "laysEggs": true, "isCarnivore": true,
-    "isLarge": false, "isPredator": false
-  },
-  "snake": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasScales": true, "laysEggs": true, "isCarnivore": true,
-    "isLarge": false, "isPredator": true
-  },
-  "crocodile": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": true, "hasScales": true, "laysEggs": true, "isCarnivore": true,
-    "isLarge": true, "isPredator": true
-  },
-  "turtle": {
-    "isMammal": false, "canFly": false, "isPet": true, "isDomestic": false,
-    "livesInWater": true, "hasShell": true, "laysEggs": true, "isHerbivore": false,
-    "isLarge": false, "isPredator": false
-  },
-  "fish": {
-    "isMammal": false, "canFly": false, "isPet": true, "isDomestic": false,
-    "livesInWater": true, "hasScales": true, "laysEggs": true, "isCarnivore": false,
-    "isHerbivore": false, "isPredator": false
-  },
-  "shark": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": true, "hasScales": true, "laysEggs": true, "isCarnivore": true,
-    "isLarge": true, "isPredator": true
-  },
-  "whale": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": true, "hasFur": false, "laysEggs": false, "isCarnivore": true,
-    "isLarge": true, "isPredator": true
-  },
-  "dolphin": {
-    "isMammal": true, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": true, "hasFur": false, "laysEggs": false, "isCarnivore": true,
-    "isLarge": false, "isPredator": true
-  },
-  "octopus": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": true, "hasScales": false, "laysEggs": true, "isCarnivore": true,
-    "isLarge": false, "isPredator": true
-  },
-  "bee": {
-    "isMammal": false, "canFly": true, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasWings": true, "laysEggs": true, "isHerbivore": false,
-    "isLarge": false, "isPredator": false
-  },
-  "ant": {
-    "isMammal": false, "canFly": false, "isPet": false, "isDomestic": false,
-    "livesInWater": false, "hasWings": false, "laysEggs": true, "isHerbivore": false,
-    "isLarge": false, "isPredator": false
-  }
+  "dog": {"isMammal": true, "canFly": false, "isPet": true, "isDomestic": true, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": true},
+  "cat": {"isMammal": true, "canFly": false, "isPet": true, "isDomestic": true, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": true},
+  "cow": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": true, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": true, "isOmnivore": false, "isLarge": true, "isPredator": false},
+  "horse": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": true, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": true, "isOmnivore": false, "isLarge": true, "isPredator": false},
+  "sheep": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": true, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": true, "isOmnivore": false, "isLarge": false, "isPredator": false},
+  "pig": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": true, "livesInWater": false, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": false, "isOmnivore": true, "isLarge": false, "isPredator": false},
+  "rabbit": {"isMammal": true, "canFly": false, "isPet": true, "isDomestic": true, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": true, "isOmnivore": false, "isLarge": false, "isPredator": false},
+  "lion": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": true, "isPredator": true},
+  "tiger": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": true, "isPredator": true},
+  "elephant": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": true, "isOmnivore": false, "isLarge": true, "isPredator": false},
+  "bear": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": false, "isOmnivore": true, "isLarge": true, "isPredator": true},
+  "wolf": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": true},
+  "fox": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": true},
+  "deer": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": true, "isOmnivore": false, "isLarge": false, "isPredator": false},
+  "monkey": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": true, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": false, "isHerbivore": false, "isOmnivore": true, "isLarge": false, "isPredator": false},
+  "eagle": {"isMammal": false, "canFly": true, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": false, "hasFeathers": true, "hasScales": false, "hasShell": false, "hasWings": true, "laysEggs": true, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": true},
+  "penguin": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": true, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": true, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": false},
+  "duck": {"isMammal": false, "canFly": true, "isPet": false, "isDomestic": true, "livesInWater": true, "hasFur": false, "hasFeathers": true, "hasScales": false, "hasShell": false, "hasWings": true, "laysEggs": true, "isCarnivore": false, "isHerbivore": false, "isOmnivore": true, "isLarge": false, "isPredator": false},
+  "chicken": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": true, "livesInWater": false, "hasFur": false, "hasFeathers": true, "hasScales": false, "hasShell": false, "hasWings": true, "laysEggs": true, "isCarnivore": false, "isHerbivore": false, "isOmnivore": true, "isLarge": false, "isPredator": false},
+  "ostrich": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": false, "hasFeathers": true, "hasScales": false, "hasShell": false, "hasWings": true, "laysEggs": true, "isCarnivore": false, "isHerbivore": true, "isOmnivore": false, "isLarge": true, "isPredator": false},
+  "frog": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": true, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": false},
+  "snake": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": false, "hasFeathers": false, "hasScales": true, "hasShell": false, "hasWings": false, "laysEggs": true, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": true},
+  "crocodile": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": false, "hasScales": true, "hasShell": false, "hasWings": false, "laysEggs": true, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": true, "isPredator": true},
+  "turtle": {"isMammal": false, "canFly": false, "isPet": true, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": true, "hasWings": false, "laysEggs": true, "isCarnivore": false, "isHerbivore": true, "isOmnivore": false, "isLarge": false, "isPredator": false},
+  "fish": {"isMammal": false, "canFly": false, "isPet": true, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": false, "hasScales": true, "hasShell": false, "hasWings": false, "laysEggs": true, "isCarnivore": false, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": false},
+  "shark": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": false, "hasScales": true, "hasShell": false, "hasWings": false, "laysEggs": true, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": true, "isPredator": true},
+  "whale": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": true, "isPredator": true},
+  "dolphin": {"isMammal": true, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": false, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": true},
+  "octopus": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": true, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": true, "isCarnivore": true, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": true},
+  "bee": {"isMammal": false, "canFly": true, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": true, "laysEggs": true, "isCarnivore": false, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": false},
+  "ant": {"isMammal": false, "canFly": false, "isPet": false, "isDomestic": false, "livesInWater": false, "hasFur": false, "hasFeathers": false, "hasScales": false, "hasShell": false, "hasWings": false, "laysEggs": true, "isCarnivore": false, "isHerbivore": false, "isOmnivore": false, "isLarge": false, "isPredator": false}
 }
