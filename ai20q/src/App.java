@@ -27,7 +27,6 @@ public class App {
                 } else {
                     System.out.println("Please answer 'y' or 'n'.");
                 }
-                // loop continues: solver.makeGuess will choose next attribute or concrete guess
             } else if (step.startsWith("ANIMAL:")) {
                 String animal = step.substring("ANIMAL:".length());
                 System.out.println("Is it a " + animal + "? (y/n)");
@@ -36,7 +35,6 @@ public class App {
                     System.out.println("Yay! I guessed it right.");
                     solved = true;
                 } else if (ans.startsWith("n")) {
-                    // if there are more concrete guesses, loop will continue and solver.makeGuess() will return the next
                     if (!solver.hasMoreConcreteGuesses()) {
                         System.out.println("I couldn't guess your animal from my knowledge base.");
                         break;
