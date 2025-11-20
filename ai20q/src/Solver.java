@@ -1,4 +1,5 @@
 import java.util.*;
+import org.apache.commons.math3.util.FastMath;
 
 public class Solver {
     private Map<String, Map<String, Boolean>> allAnimals;
@@ -46,9 +47,43 @@ public class Solver {
         }
 
         if (!candidateAttrs.isEmpty()) {
-            String pick = candidateAttrs.get(rnd.nextInt(candidateAttrs.size()));
-            askedAttributes.add(pick);
-            return "ATTR:" + pick;
+            String bestAttr = null;
+            double bestEntropy = Double.POSITIVE_INFINITY;
+
+            System.out.println("\n--- Entropy Evaluation for Attributes ---");
+
+            for (String attr : candidateAttrs) {
+                int yesCnt = 0;
+                int noCnt = 0;
+                for (String animal : remaining) {
+                    boolean value = allAnimals.get(animal).get(attr);
+                    if (value) {
+                        yesCnt++;
+                    } else {
+                        noCnt++;
+                    }
+                }
+
+                double h = entropy(yesCnt, noCnt);
+
+                System.out.println(
+                    "Attribute: " + attr +
+                    " | yes=" + yesCnt + ", no=" + noCnt +
+                    " | entropy=" + h
+                );
+                
+                if (h < bestEntropy) {
+                    System.out.println("NEW BEST ATTRIBUTE: " + attr + " (lower entropy)");
+                    bestEntropy = h;
+                    bestAttr = attr;
+                }
+            }
+
+            System.out.println("FINAL CHOSEN ATTRIBUTE: " + bestAttr);
+            System.out.println("----------------------------------------\n");
+
+            askedAttributes.add(bestAttr);
+            return "ATTR:" + bestAttr;
         }
 
         if (remaining.isEmpty()) return null;
@@ -71,5 +106,23 @@ public class Solver {
 
     public boolean hasMoreConcreteGuesses() {
         return guessIndex < remaining.size();
+    }
+
+    private double log2(double x) {
+        return FastMath.log(x) / FastMath.log(2);
+    }
+
+    private double entropy(int yesCnt, int noCnt) {
+        int total = yesCnt + noCnt;
+
+        double pYes = (double) yesCnt / total;
+        double pNo = (double) noCnt / total;
+
+        double h = 0.0;
+
+        if (pYes > 0) h -= pYes * log2(pYes);
+        if (pNo > 0) h -= pNo * log2(pNo);
+
+        return h;
     }
 }
