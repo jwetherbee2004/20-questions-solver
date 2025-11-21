@@ -6,7 +6,6 @@ public class Solver {
     private List<String> remaining;
     private Set<String> askedAttributes = new HashSet<>();
     private int guessIndex = 0;
-    private Random rnd = new Random();
 
     public Solver(Map<String, Map<String, Boolean>> data) {
         this.allAnimals = data;
