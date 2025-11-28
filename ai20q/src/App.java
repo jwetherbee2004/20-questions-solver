@@ -18,14 +18,16 @@ public class App {
 
             if (step.startsWith("ATTR:")) {
                 String attr = step.substring("ATTR:".length());
-                System.out.println(attr + "? (y/n)");
+                System.out.println(attr + "? (y/n/m)");
                 String ans = sc.nextLine().trim().toLowerCase();
-                if (ans.startsWith("y")) {
-                    solver.applyAnswer(attr, true);
-                } else if (ans.startsWith("n")) {
-                    solver.applyAnswer(attr, false);
+                if (ans.equals("y")) {
+                    solver.applyAnswer(attr, Answer.YES);
+                } else if (ans.equals("n")) {
+                    solver.applyAnswer(attr, Answer.NO);
+                } else if (ans.equals("m") || ans.equals("s")) {
+                    solver.applyAnswer(attr, Answer.MAYBE);
                 } else {
-                    System.out.println("Please answer 'y' or 'n'.");
+                    System.out.println("Please answer 'y', 'n', or 'm' (maybe).");
                 }
             } else if (step.startsWith("ANIMAL:")) {
                 String animal = step.substring("ANIMAL:".length());

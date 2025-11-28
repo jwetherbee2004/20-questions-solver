@@ -1,6 +1,10 @@
 import java.util.*;
 import org.apache.commons.math3.util.FastMath;
 
+enum Answer {
+    YES, NO, MAYBE
+}
+
 public class Solver {
     private Map<String, Map<String, Boolean>> allAnimals;
     private List<String> remaining;
@@ -47,33 +51,59 @@ public class Solver {
 
         if (!candidateAttrs.isEmpty()) {
             String bestAttr = null;
-            double bestEntropy = Double.POSITIVE_INFINITY;
+            double bestGain = Double.NEGATIVE_INFINITY;
 
-            System.out.println("\n--- Entropy Evaluation for Attributes ---");
+            System.out.println("\n--- Information Gain Evaluation ---");
+
+            double hBefore = log2(remaining.size());
 
             for (String attr : candidateAttrs) {
-                int yesCnt = 0;
-                int noCnt = 0;
+
+                List<String> yesGroup = new ArrayList<>();
+                List<String> noGroup = new ArrayList<>();
+                List<String> maybeGroup = new ArrayList<>();
+
                 for (String animal : remaining) {
-                    boolean value = allAnimals.get(animal).get(attr);
-                    if (value) {
-                        yesCnt++;
+                    Boolean value = allAnimals.get(animal).get(attr);
+                    if (value == null) {
+                        maybeGroup.add(animal);
+                    } else if (value) {
+                        yesGroup.add(animal);
                     } else {
-                        noCnt++;
+                        noGroup.add(animal);
                     }
                 }
 
-                double h = entropy(yesCnt, noCnt);
+                int yesCnt = yesGroup.size();
+                int noCnt = noGroup.size();
+                
+                int total = remaining.size();
+
+                int maybeCnt = maybeGroup.size();
+
+                double hYes   = yesCnt   == 0 ? 0 : log2(yesCnt);
+                double hNo    = noCnt    == 0 ? 0 : log2(noCnt);
+                double hMaybe = maybeCnt == 0 ? 0 : log2(maybeCnt);
+
+                double pYes   = yesCnt   / (double) total;
+                double pNo    = noCnt    / (double) total;
+                double pMaybe = maybeCnt / (double) total;
+
+                double expectedAfter =
+                        pYes   * hYes +
+                        pNo    * hNo +
+                        pMaybe * hMaybe;
+
+                double infoGain = hBefore - expectedAfter;                 
 
                 System.out.println(
                     "Attribute: " + attr +
                     " | yes=" + yesCnt + ", no=" + noCnt +
-                    " | entropy=" + h
+                    " | IG=" + infoGain
                 );
                 
-                if (h < bestEntropy) {
-                    System.out.println("NEW BEST ATTRIBUTE: " + attr + " (lower entropy)");
-                    bestEntropy = h;
+                if (infoGain > bestGain) {
+                    bestGain = infoGain;
                     bestAttr = attr;
                 }
             }
@@ -91,13 +121,16 @@ public class Solver {
         return "ANIMAL:" + animalGuess;
     }
 
-    public boolean applyAnswer(String attribute, boolean answer) {
+    public boolean applyAnswer(String attribute, Answer answer) {
         askedAttributes.add(attribute);
         int before = remaining.size();
         remaining.removeIf(animal -> {
-            Map<String, Boolean> attrs = allAnimals.get(animal);
-            Boolean value = (attrs == null) ? null : attrs.get(attribute);
-            return value == null || value != answer;
+            Boolean value = allAnimals.get(animal).get(attribute);
+            if (answer == Answer.MAYBE) return false;
+            if (answer == Answer.YES) return value == null || !value;
+            if (answer == Answer.NO) return value == null || value;
+
+            return false;
         });
         guessIndex = 0;
         return remaining.size() < before;
@@ -109,19 +142,5 @@ public class Solver {
 
     private double log2(double x) {
         return FastMath.log(x) / FastMath.log(2);
-    }
-
-    private double entropy(int yesCnt, int noCnt) {
-        int total = yesCnt + noCnt;
-
-        double pYes = (double) yesCnt / total;
-        double pNo = (double) noCnt / total;
-
-        double h = 0.0;
-
-        if (pYes > 0) h -= pYes * log2(pYes);
-        if (pNo > 0) h -= pNo * log2(pNo);
-
-        return h;
     }
 }
