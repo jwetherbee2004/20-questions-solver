@@ -9,6 +9,7 @@ public class Solver {
     private Map<String, Map<String, Boolean>> allAnimals;
     private Set<String> askedAttributes = new HashSet<>();
     private int guessIndex = 0;
+    private int questionIndex = 0;
 
     private List<String> currentCandidates = new ArrayList<>();
     private Map<String, Answer> userAnswers = new HashMap<>();
@@ -21,6 +22,10 @@ public class Solver {
         for (String animal : data.keySet()) {
             probabilities.put(animal, 1.0 / data.size());
         }
+    }
+
+    public int getQuestionIndex() {
+        return questionIndex;
     }
 
     public String makeGuess() {
@@ -101,13 +106,24 @@ public class Solver {
         }
 
         // 4. Decision: Ask Attribute or Guess Animal
+        // If we have reached the 20th question, guess the best candidate
+        if (questionIndex >= 20) {
+            if (guessIndex < this.currentCandidates.size()) {
+                return "ANIMAL:" + this.currentCandidates.get(guessIndex++);
+            } else {
+                return null;
+            }
+        }
+
         // If we found a good attribute, ask it
         if (bestAttr != null && bestGain > 0.001) { 
+            questionIndex++;
             return "ATTR:" + bestAttr;
         }
 
         // If no good attribute found (or IG is 0), start guessing from the top of the sorted list
         if (guessIndex < this.currentCandidates.size()) {
+            questionIndex++;
             return "ANIMAL:" + this.currentCandidates.get(guessIndex++);
         }
 

@@ -16,6 +16,25 @@ public class App {
                 break;
             }
 
+            System.out.println("Question #" + solver.getQuestionIndex());
+
+            if(solver.getQuestionIndex() >= 20) {
+                String animal = step.substring("ANIMAL:".length());
+                System.out.println("My last guess: Is it a " + animal + "? (y/n)");
+                String ans = sc.nextLine().trim().toLowerCase();
+                if (ans.startsWith("y")) {
+                    System.out.println("Yay! I guessed it right.");
+                    solved = true;
+                } else if (ans.startsWith("n")) {
+                    if (!solver.hasMoreConcreteGuesses()) {
+                        System.out.println("I couldn't guess your animal in 20 questions.");
+                        break;
+                    }
+                } else {
+                    System.out.println("Please answer 'y' or 'n'.");
+                }
+            }
+
             if (step.startsWith("ATTR:")) {
                 String attr = step.substring("ATTR:".length());
                 System.out.println(attr + "? (y/n/m)");
