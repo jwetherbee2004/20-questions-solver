@@ -21,6 +21,7 @@ public class ExperimentRunner {
         for (int trial = 0; trial < TRIALS; trial++) {
 
             String target = animalList.get(random.nextInt(animalList.size()));
+            System.out.println("Target animal is '" + target + "'.");
             Solver solver = new Solver(animals);
 
             int qCount = 0;
@@ -42,9 +43,17 @@ public class ExperimentRunner {
                     Answer answer;
 
                     if (truth == null) answer = Answer.MAYBE;
-                    else answer = truth ? Answer.YES : Answer.NO;
+                    else {
+                        if (random.nextDouble() < 0.05) {
+                            answer = Answer.MAYBE;
+                        } else {
+                            answer = truth ? Answer.YES : Answer.NO;
+                        }
+                    }
 
                     solver.applyAnswer(attr, answer);
+                    System.out.println("AI answered attribute '" + attr + "' with " + answer);
+                    System.out.println("===================================================");
                     qCount++;
                 }
 
@@ -53,10 +62,19 @@ public class ExperimentRunner {
 
                     if (guessAnimal.equals(target)) {
                         successes++;
+                        System.out.println("AI correctly guessed the animal '" + guessAnimal + "'.");
                         successCount.put(target, successCount.getOrDefault(target, 0) + 1);
                     } else {
-                        failures++;
-                        failureCount.put(target, failureCount.getOrDefault(target, 0) + 1);
+                        if (solver.hasMoreConcreteGuesses()) {
+                            System.out.println("AI guessed wrong with '" + guessAnimal + "'. Trying next guess...");
+                            System.out.println("===================================================");
+                            qCount++;
+                            continue;
+                        } else {
+                            failures++;
+                            System.out.println("AI guessed animal '" + guessAnimal + "' but target was '" + target + "'.");
+                            failureCount.put(target, failureCount.getOrDefault(target, 0) + 1);
+                        }
                     }
 
                     qCount++;
@@ -65,9 +83,30 @@ public class ExperimentRunner {
 
                 // Safety: prevent infinite loops
                 if (qCount >= 20) {
-                    failures++;
-                    failureCount.put(target, failureCount.getOrDefault(target, 0) + 1);
-                    break;
+                    String fallback = solver.makeGuess();  // LET SOLVER TRY A CONCRETE GUESS
+
+                    if (fallback == null) {
+                        System.out.println("AI ran out of fallback guesses.");
+                        failures++;
+                        failureCount.put(target, failureCount.getOrDefault(target, 0) + 1);
+                        break;
+                    }
+
+                    if (fallback.startsWith("ANIMAL:")) {
+                        String guessAnimal = fallback.substring(7);
+
+                        if (guessAnimal.equals(target)) {
+                            successes++;
+                            System.out.println("AI correctly guessed the fallback animal '" + guessAnimal + "'.");
+                            successCount.put(target, successCount.getOrDefault(target, 0) + 1);
+                        } else {
+                            failures++;
+                            System.out.println("AI fallback-guessed '" + guessAnimal + "' but target was '" + target + "'.");
+                            failureCount.put(target, failureCount.getOrDefault(target, 0) + 1);
+                        }
+
+                        break;
+                    }
                 }
             }
 

@@ -45,6 +45,17 @@ public class Solver {
 
         double bestProb = calculateScore(sortedProbabilities.get(0));
 
+        // Guess the top animal if it meets the probability threshold
+        String top = sortedProbabilities.get(0);
+        double topProb = calculateScore(top);
+
+        if (topProb >= 0.90 && questionIndex < 20) {
+            questionIndex++;
+            System.out.println("===================================================");
+            System.out.println("High confidence guess: " + top + " with probability " + topProb);
+            return "ANIMAL:" + top;
+        }
+
         for (String animal : sortedProbabilities) {
             if(this.currentCandidates.size() < 5 || 
                 probabilities.get(animal) >= bestProb * 0.25) {
@@ -118,12 +129,16 @@ public class Solver {
         // If we found a good attribute, ask it
         if (bestAttr != null && bestGain > 0.001) { 
             questionIndex++;
+            System.out.println("===================================================");
+            System.out.println("Asking about attribute: " + bestAttr);
             return "ATTR:" + bestAttr;
         }
 
         // If no good attribute found (or IG is 0), start guessing from the top of the sorted list
         if (guessIndex < this.currentCandidates.size()) {
             questionIndex++;
+            System.out.println("===================================================");
+            System.out.println("Guessing animal: " + this.currentCandidates.get(guessIndex));
             return "ANIMAL:" + this.currentCandidates.get(guessIndex++);
         }
 
