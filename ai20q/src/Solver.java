@@ -77,10 +77,10 @@ public class Solver {
         for (String attr : attrs) {
             if (askedAttributes.contains(attr)) continue;
 
-            // --- Entropy Calculation on 'candidates' ---
+            // Entropy Calculation on 'candidates'
             List<String> yesGroup = new ArrayList<>();
             List<String> noGroup = new ArrayList<>();
-            List<String> maybeGroup = new ArrayList<>(); // Animals with null/unknown for this attr
+            List<String> maybeGroup = new ArrayList<>();
 
             for (String animal : this.currentCandidates) {
                 Boolean value = allAnimals.get(animal).get(attr);
