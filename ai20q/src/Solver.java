@@ -33,7 +33,7 @@ public class Solver {
         List<String> sortedAnimals = new ArrayList<>(allAnimals.keySet());
         sortedAnimals.sort((a, b) -> Double.compare(calculateScore(b), calculateScore(a)));
         for (String animal : sortedAnimals) {
-            System.out.println("Animal: " + animal + ", Score: " + calculateScore(animal));
+            // System.out.println("Animal: " + animal + ", Score: " + calculateScore(animal));
         }
 
         // 2. Filter to get the "current candidates"
@@ -51,8 +51,8 @@ public class Solver {
 
         if (topProb >= 0.90 && questionIndex < 20) {
             questionIndex++;
-            System.out.println("===================================================");
-            System.out.println("High confidence guess: " + top + " with probability " + topProb);
+            // System.out.println("===================================================");
+            // System.out.println("High confidence guess: " + top + " with probability " + topProb);
             return "ANIMAL:" + top;
         }
 
@@ -129,16 +129,16 @@ public class Solver {
         // If we found a good attribute, ask it
         if (bestAttr != null && bestGain > 0.001) { 
             questionIndex++;
-            System.out.println("===================================================");
-            System.out.println("Asking about attribute: " + bestAttr);
+            // System.out.println("===================================================");
+            // System.out.println("Asking about attribute: " + bestAttr);
             return "ATTR:" + bestAttr;
         }
 
         // If no good attribute found (or IG is 0), start guessing from the top of the sorted list
         if (guessIndex < this.currentCandidates.size()) {
             questionIndex++;
-            System.out.println("===================================================");
-            System.out.println("Guessing animal: " + this.currentCandidates.get(guessIndex));
+            // System.out.println("===================================================");
+            // System.out.println("Guessing animal: " + this.currentCandidates.get(guessIndex));
             return "ANIMAL:" + this.currentCandidates.get(guessIndex++);
         }
 
