@@ -2,9 +2,11 @@
     "java.project.referencedLibraries": [
         "ai20q\\lib\\commons-math3-3.6.1.jar",
         "c:\\Users\\jarja\\Desktop\\School\\B351\\20 Questions Solver\\20-questions-solver\\ai20q\\lib\\gson-2.13.2.jar",
-        "C:\\Users\\EvanL\\OneDrive\\Documents\\2025 Fall Classes\\CSCI-B351 Intro to AI\\project\\20-questions-solver\\ai20q\\lib\\gson-2.13.2.jar"
+        "C:\\Users\\EvanL\\OneDrive\\Documents\\2025 Fall Classes\\CSCI-B351 Intro to AI\\project\\20-questions-solver\\ai20q\\lib\\gson-2.13.2.jar",
+        "ai20q/lib/junit-platform-console-standalone-1.10.0.jar"
     ],
     "java.project.sourcePaths": [
         "ai20q\\src"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
